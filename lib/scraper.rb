@@ -5,19 +5,32 @@ require 'nokogiri'
 class Scraper
 
   def self.scrape_index_page(index_url)
+<<<<<<< HEAD
     output = []
+=======
+>>>>>>> a841251cb45cbd720f67bfc6b32aa179c3ab2cff
     doc = Nokogiri::HTML(open(index_url))
     student = doc.css('div.card-text-container')
 
     student.each { |student|
+<<<<<<< HEAD
       name = student.css('h4.student-name').text
       location = student.css('p.student-location').text
       url = student.parent.first[1]
       output << {
+=======
+      binding.pry
+      name =
+      location =
+      url =
+
+      output = {
+>>>>>>> a841251cb45cbd720f67bfc6b32aa179c3ab2cff
         :name => name,
         :location => location,
         :profile_url => url,
       }
+<<<<<<< HEAD
     }
 
     output
@@ -60,6 +73,15 @@ class Scraper
       :profile_quote => profile_quote,
       :bio => bio
     }.reject{|k,v| v.nil?}
+=======
+    output
+    }
+
+  end
+
+  def self.scrape_profile_page(profile_url)
+
+>>>>>>> a841251cb45cbd720f67bfc6b32aa179c3ab2cff
   end
 
 end
